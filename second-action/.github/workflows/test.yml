@@ -1,0 +1,16 @@
+name: Test project #Workflow
+on: push
+jobs: #Workflow has job(s)
+  test:
+    runs-on: ubuntu-latest
+    steps: #Job has steps
+      - name: Checkout code
+        uses: actions/checkout@v3 #action
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with: #configuration for action
+          node-version: 18
+      - name: Install dependencies
+        run: npm install #simple command, so no need for action.
+      - name: Run tests
+        run: npm test
