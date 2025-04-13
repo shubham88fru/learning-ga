@@ -1,5 +1,5 @@
 name: Test project #Workflow
-on: push
+on: push # Event that triggers the workflow
 jobs: #Workflow has job(s)
   test:
     runs-on: ubuntu-latest
