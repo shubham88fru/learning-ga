@@ -1,5 +1,5 @@
 name: Build and project #Workflow
-on: push # Event that triggers the workflow
+on: [push, workflow_dispatch] # Event that triggers the workflow
 jobs: #Workflow has job(s)
   test: # Job 1
     runs-on: ubuntu-latest
