@@ -1,7 +1,7 @@
-name: Test project #Workflow
+name: Build and project #Workflow
 on: push # Event that triggers the workflow
 jobs: #Workflow has job(s)
-  test:
+  test: # Job 1
     runs-on: ubuntu-latest
     steps: #Job has steps
       - name: Checkout code
@@ -14,3 +14,18 @@ jobs: #Workflow has job(s)
         run: npm install #simple command, so no need for action.
       - name: Run tests
         run: npm test
+  deploy: # Job 2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm install
+      - name: Build project
+        run: npm run build
+      - name: Deploy to server
+        run: echo "Deploying to server..."
