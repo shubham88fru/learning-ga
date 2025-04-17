@@ -33,7 +33,7 @@ jobs: #Workflow has job(s)
         with:
           name: dist-files
           path: |
-            dist
+            distjjjj
             package.json
       - name: Deploy to server
         run: echo "Deploying to server..."
